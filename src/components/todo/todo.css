@@ -1,0 +1,19 @@
+.todoList {
+  color: black;
+  border: 7px;
+  border-color: black;
+  border-style: solid;
+  margin-right: 500px;
+  margin-left: 500px;
+  background-color: lightblue;
+  padding-bottom: 500px;
+}
+
+h1 {
+  text-decoration: underline;
+  background-color: lightblue;
+}
+
+.completed {
+  text-decoration: line-through;
+}

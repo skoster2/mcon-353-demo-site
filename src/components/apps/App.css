@@ -1,16 +1,16 @@
 .App {
   text-align: center;
-  background-color: lavender;
+  background-color: lightblue;
 }
 
 .card {
-  background-color: lavender;
+  background-color: lightblue;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-  background-color: lavender;
+  background-color: lightblue;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -45,7 +45,7 @@
 
 .mdc-banner {
   color: blueviolet;
-  background-color: lavender;
+  background-color: lightblue;
   align-items: center;
   justify-content: center;
   text-align: center;
