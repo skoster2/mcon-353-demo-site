@@ -1,7 +1,10 @@
 
 import React, {useState} from 'react';
 import './todo.css';
-//import {DeleteIcon} from '@mui/icons-material/Delete';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Grid from '@mui/material/Grid';
+
+
 
 
 export const Todo =() => {
@@ -37,9 +40,24 @@ export const Todo =() => {
 
 const TodoItem = (props) => {
   return <div className = {props.checked ? 'completed' : 'notCompleted'}>
+
+
+<Grid container spacing={1} className="grid">
+
+<Grid item xs={0}>
+    
     <input type = "Checkbox" name="text" onChange ={() => props.checkOffTodo(props)}></input>
+    
+  </Grid>
+
+  <Grid item xs={3} className="todoText">
     {props.text}
-    <button onClick={() => props.deleteTodo(props.text)}>Delete</button>
+    </Grid>
+
+    <Grid item xs={1}>
+      <button onClick={() => props.deleteTodo(props.text)}><DeleteIcon/></button>
+    </Grid>
+    </Grid>
     </div>;
 }
 

@@ -3,10 +3,10 @@
   border: 7px;
   border-color: black;
   border-style: solid;
-  margin-right: 500px;
-  margin-left: 500px;
+  margin-right: 200px;
+  margin-left: 200px;
   background-color: lightblue;
-  padding-bottom: 500px;
+  padding-bottom: 200px;
 }
 
 h1 {
@@ -16,4 +16,12 @@ h1 {
 
 .completed {
   text-decoration: line-through;
+}
+
+.grid {
+  justify-content: center;
+}
+
+.todoList {
+  justify-content: left;
 }
