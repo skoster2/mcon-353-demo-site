@@ -3,15 +3,14 @@ import React, {useState} from 'react';
 import './todo.css';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Grid from '@mui/material/Grid';
-
-
+import { useContext } from 'react';
+import { myContext } from '../apps/App';
 
 
 export const Todo =() => {
     
       const[inputText, setInputText] = useState('');
-      const[todos, setTodos] = useState([]);
-      //const[checked, setChecked] = useState();
+      const{todos, setTodos} = useContext(myContext);
 
       function addTodo() {
         const newTodos = [...todos, {text:inputText, checked:false}];
