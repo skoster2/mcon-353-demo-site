@@ -1,0 +1,43 @@
+.usermessage {
+  background-color: rgb(127, 213, 241);
+  margin: 1%;
+  padding: 1%;
+  width: 40%;
+  margin-left: 50%;
+  border-radius: 25px;
+  text-align: left;
+}
+
+.othermessage {
+  background-color: rgb(22, 100, 126);
+  margin: 1%;
+  padding: 1%;
+  width: 40%;
+  justify-self: left;
+  justify-content: left;
+  border-radius: 25px;
+  text-align: left;
+}
+
+.message {
+  padding-left: 7%;
+}
+
+.input {
+  width: 33%;
+}
+
+.username {
+  font-size: smaller;
+  text-align: left;
+  padding-left: 2%;
+}
+.messages {
+  align-self: center;
+}
+
+#basic-button {
+  outline-color: black;
+  outline-width: 15%;
+  color: black;
+}

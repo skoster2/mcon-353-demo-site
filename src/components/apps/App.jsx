@@ -1,5 +1,6 @@
 import {Home} from '../home/home';
 import {Todo} from '../todo/todo';
+import {Chat} from '../chat/chat';
 import {
   BrowserRouter,
   Routes,
@@ -23,6 +24,7 @@ function App(){
         <Route path="/" element={<Home />}>
         </Route>
         <Route path="/todo" element={<Todo/>}/>
+        <Route path="/chatroom" element={<Chat/>}/>
       </Routes>
     </BrowserRouter>
     </myContext.Provider>

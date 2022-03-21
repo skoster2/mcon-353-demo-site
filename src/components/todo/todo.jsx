@@ -26,7 +26,7 @@ export const Todo =() => {
       }
 
       return (
-        <div className = "todoList"><h1>Todo List</h1><div>
+        <div data-testid="todo" className = "todoList"><h1>Todo List</h1><div>
           <input type="text"
             onChange={(event) => setInputText(event.target.value)}
             placeholder="add item" />
