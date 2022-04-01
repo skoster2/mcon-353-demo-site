@@ -2,7 +2,7 @@ import {Home} from '../home/home';
 import {Todo} from '../todo/todo';
 import {Chat} from '../chat/chat';
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -18,7 +18,7 @@ function App(){
   return(
     <div className='App'>
       <myContext.Provider value = {{todos, setTodos}}>
-  <BrowserRouter>
+  <HashRouter>
   <Header/>
       <Routes>
         <Route path="/" element={<Home />}>
@@ -26,7 +26,7 @@ function App(){
         <Route path="/todo" element={<Todo/>}/>
         <Route path="/chatroom" element={<Chat/>}/>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
     </myContext.Provider>
     </div>
   )

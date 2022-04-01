@@ -5,6 +5,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import Grid from '@mui/material/Grid';
 import { useContext } from 'react';
 import { myContext } from '../apps/App';
+import Button from '@mui/material/Button';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 
 export const Todo =() => {
@@ -18,11 +20,17 @@ export const Todo =() => {
       }
 
       function deleteTodo(deletedTodo) {
-        setTodos(todos.filter(todo => todo.text !== deletedTodo))
+        setTodos(todos.filter(todo => todo.text !== deletedTodo));
       }
 
-      function checkOffTodo(setChecked){
-        setChecked.checked= (!setChecked.checked);
+      function checkOffTodo(checkedTodo){
+        const newTodos = todos.map((todo) => {
+          if (todo.text === checkedTodo) {
+            return { ...todos, text: todo.text, checked: !todo.checked };
+          }
+          return { ...todos, text: todo.text, checked: todo.checked };
+        });
+        setTodos(newTodos);
       }
 
       return (
@@ -30,8 +38,8 @@ export const Todo =() => {
           <input type="text"
             onChange={(event) => setInputText(event.target.value)}
             placeholder="add item" />
-          <button onClick={addTodo}>Add</button>
-          {todos.map((todo)  => (<TodoItem text={todo.text} checkOffTodo={checkOffTodo} deleteTodo={deleteTodo} />))}
+          <Button onClick={addTodo}>Add</Button>
+          {todos.map((todo)  => (<TodoItem text={todo.text} checkOffTodo={checkOffTodo} deleteTodo={deleteTodo} checked={todo.checked}/>))}
         </div></div>
       );
 };
@@ -41,20 +49,18 @@ const TodoItem = (props) => {
   return <div className = {props.checked ? 'completed' : 'notCompleted'}>
 
 
-<Grid container spacing={1} className="grid">
+<Grid container spacing={0} className="grid">
 
-<Grid item xs={0}>
-    
-    <input type = "Checkbox" name="text" onChange ={() => props.checkOffTodo(props)}></input>
-    
-  </Grid>
-
-  <Grid item xs={3} className="todoText">
+  <Grid item xs={3} className = {props.checked ? 'completed' : 'notCompleted'}>
     {props.text}
     </Grid>
 
-    <Grid item xs={1}>
-      <button onClick={() => props.deleteTodo(props.text)}><DeleteIcon/></button>
+    <Grid item xs={0}>
+      <Button onClick={() => props.deleteTodo(props.text)}><DeleteIcon/></Button>
+
+    </Grid>
+    <Grid item xs={0}>
+    <Button onClick={() => props.checkOffTodo(props.text)}><CheckBoxIcon/></Button>
     </Grid>
     </Grid>
     </div>;
